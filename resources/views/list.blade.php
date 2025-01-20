@@ -23,7 +23,7 @@
 
         <div class="py-5 text-center">
             <div class="d-flex justify-content-center">
-                <a class="btn btn-primary" href="/">Nuovo</a>
+                <a class="btn btn-primary"  href='{{ route('contacts.create') }}'>Nuovo</a>
             </div>
         </div>
 

@@ -23,8 +23,8 @@ Route::get('/list', [ContactsController::class, 'index'])->name('contacts.list')
 
 
 Route::get('/create', function () {
-    return view('welcome');
-});
+    return view('form');
+})->name('contacts.create');
 
 Route::get('/edit', function () {
     return view('welcome');

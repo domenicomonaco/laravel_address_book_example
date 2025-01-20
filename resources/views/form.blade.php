@@ -32,35 +32,56 @@
 
             <div class="col-12">
                 <h4 class="mb-3">Address item</h4>
-                <form class="needs-validation" novalidate="">
+                <form action="{{ route('contacts.store') }}" method="post">
+                    @csrf
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Valid first name is required.
-                            </div>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="" value=""
+                                required="">
                         </div>
 
                         <div class="col-sm-6">
                             <label for="second_name" class="form-label">Second name</label>
-                            <input type="text" class="form-control" id="second_name" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Valid last name is required.
-                            </div>
+                            <input type="text" class="form-control" name="second_name" id="second_name" placeholder="" value=""
+                                required="">
                         </div>
 
-                        <div class="col-12">
-                           
+                        <div class="col-sm-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address" id="address" placeholder="" value=""
+                                required="">
                         </div>
+
+                        <div class="col-sm-5">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="" value=""
+                                required="">
+
+                        </div>
+
+                        <div class="col-sm-5">
+                            <label for="phonenumber" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phonenumber" placeholder="" value=""
+                                required="">
+
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label for="years" class="form-label">Years</label>
+                            <input type="number" class="form-control" id="years" placeholder="" value=""
+                                required="">
+
+                        </div>
+
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Salva</button>
+                </form>
             </div>
-
-            <hr class="my-4">
-
-            <button class="w-100 btn btn-primary btn-lg" type="submit">Salva</button>
-            </form>
         </div>
-    </div>
 
 
 
@@ -69,11 +90,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             console.log('Jquery');
         });
     </script>

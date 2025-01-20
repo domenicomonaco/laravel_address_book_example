@@ -26,7 +26,7 @@ class ContactsController extends Controller
      */
     public function create()
     {
-        //
+      //
     }
 
     /**
@@ -38,6 +38,7 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
         //
+        return $request->name;
     }
 
     /**
@@ -49,6 +50,7 @@ class ContactsController extends Controller
     public function show(Contacts $contacts)
     {
         //
+        return view("list", compact('contactslist'));
     }
 
     /**

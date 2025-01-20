@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('/list', [ContactsController::class, 'index'])->name('contacts.list');
 
+Route::post('/store', ContactsController::class .'@store')->name('contacts.store');
 
 Route::get('/create', function () {
     return view('form');

@@ -1,4 +1,4 @@
-# laravel_address_book_example
+# Laravel Address Book Example
 Simple Laravel Address Book CRUD
 
 + PHP 8.0.x

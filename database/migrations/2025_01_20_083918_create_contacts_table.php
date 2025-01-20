@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('phonenumber');
             $table->integer('years');
-            $table->timestamps();
         });
     }
 

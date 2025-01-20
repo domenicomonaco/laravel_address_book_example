@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/list', [ContactsController::class, 'index']);
+Route::get('/list', [ContactsController::class, 'index'])->name('contacts.list');
 
 
 Route::get('/create', function () {
@@ -30,6 +30,4 @@ Route::get('/edit', function () {
     return view('welcome');
 });
 
-Route::get('/delete', function () {
-    return view('welcome');
-});
+Route::delete('/delete/{post}', ContactsController::class .'@destroy')->name('contacts.destroy');

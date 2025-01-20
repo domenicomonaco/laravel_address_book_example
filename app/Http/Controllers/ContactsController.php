@@ -80,8 +80,11 @@ class ContactsController extends Controller
      * @param  \App\Models\Contacts  $contacts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contacts $contacts)
+    public function destroy($id)
     {
-        //
+        $Contact = Contacts::find($id);
+        $Contact->delete();
+        return redirect()->route('contacts.list')
+          ->with('success', 'Contact deleted successfully');
     }
 }

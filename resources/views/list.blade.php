@@ -56,7 +56,12 @@
                                 <td>{{ $item->years }}</td>
                                 <td>
                                     <a class="btn btn-sm btn-warning" href="/">Modifica</a>
-                                    <a class="btn  btn-sm btn-danger" href="/">Elimina</a>
+
+                                    <form action="{{ route('contacts.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

@@ -16,5 +16,15 @@ Tested on: Docker / Devilbox Container
 + Routing
 + View
 
+## Feature
+
+### Ready
++ Listing contact
++ Deleting contact
+
+### Not ready
++ Crete contact
++ Edit Contact
+
 ## License MIT
 Author Domenico Monaco monaco.d23@gmail.com

@@ -37,24 +37,29 @@
                             <th scope="col">Nome</th>
                             <th scope="col">Congome</th>
                             <th scope="col">Indirizzo</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Telefono</th>
                             <th scope="col">Età</th>
                             <th scope="col">OPT</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Domenico</td>
-                            <td>Monaco</td>
-                            <td>Via Salvo d'Acquisto 39, Cisternino (BR)</td>
-                            <td>+39 339 5457151</td>
-                            <td>Mark</td>
-                            <td>
-                                <a class="btn btn-sm btn-warning" href="/">Modifica</a>
-                                <a class="btn  btn-sm btn-danger" href="/">Elimina</a>
-                            </td>
-                        </tr>
+
+                        @foreach ($contactslist as $item)
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->second_name }}</td>
+                                <td>{{ $item->address }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->phonenumber }}</td>
+                                <td>{{ $item->years }}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-warning" href="/">Modifica</a>
+                                    <a class="btn  btn-sm btn-danger" href="/">Elimina</a>
+                                </td>
+                            </tr>
+                        @endforeach
 
                     </tbody>
                 </table>
@@ -68,11 +73,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             console.log('Jquery');
         });
     </script>

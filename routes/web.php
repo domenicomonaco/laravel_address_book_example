@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/list', function () {
-    return view('list');
-});
+Route::get('/list', [ContactsController::class, 'index']);
 
 
 Route::get('/create', function () {

@@ -42,8 +42,8 @@ class ContactsController extends Controller
     {
         //
         $validator = Validator::make($request->all(),[
-            'name' => 'required|max:255',
-            'second_name' => 'required|max:255',
+            'name' => 'required|max:1',
+            'second_name' => 'required|max:1',
           ])->validateWithBag('create');
 
         if ($validator->fails()) {

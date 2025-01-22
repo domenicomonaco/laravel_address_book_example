@@ -51,10 +51,6 @@ class ContactsController extends Controller
                 ->withErrors($validator, 'create')
                 ->withInput();
         }
-        return redirect()->back()
-        ->withErrors($validator, 'create')
-        ->withInput();
-        //return $validation;
     }
 
     /**

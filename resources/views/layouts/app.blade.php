@@ -17,11 +17,12 @@
 
 <body>
     <div class="container">
-
-        <div class="py-5 text-center">
-            <h2>Address Book</h2>
-            <p class="lead">@yield('title')</p>
-        </div>
+        @hasSection('title')
+            <div class="py-5 text-center">
+                <h2>Address Book</h2>
+                <p class="lead">@yield('title')</p>
+            </div>
+        @endif
 
         @yield('content')
     </div>

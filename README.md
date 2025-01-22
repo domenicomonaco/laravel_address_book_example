@@ -15,6 +15,8 @@ Tested on: Docker / Devilbox Container
 + Controller
 + Routing
 + View
++ Layout
++ Form Validation
 
 ## Feature
 

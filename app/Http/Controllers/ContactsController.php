@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Contacts;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 class ContactsController extends Controller
 {
     /**
@@ -35,10 +37,26 @@ class ContactsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         //
-        return $request->name;
+
+
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|max:1',
+            'second_name' => 'required|max:2',
+          ])->validateWithBag('create');
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator, 'create')
+                ->withInput();
+        }
+        return redirect()->back()
+        ->withErrors($validator, 'create')
+        ->withInput();
+        //return $validation;
     }
 
     /**

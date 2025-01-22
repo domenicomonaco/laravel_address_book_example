@@ -31,46 +31,90 @@
         <div class="row g-5">
 
             <div class="col-12">
+                <div>
+
+
+
+
+                    {{ $errors->create->first('name') }}
+
+                    @php
+                        print_r($errors->create);
+                    @endphp
+
+                    @php
+                        print_r($errors);
+                    @endphp
+
+                    @if ($errors->create->any())
+                        {!! implode('', $errors->create->all('<div class="alert alert-danger">:message</div>')) !!}
+                    @endif
+
+                    @if ($errors->any())
+                        {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+                    @endif
+
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $key => $error)
+                            <div>{{ $key }} {{ $error }}</div>
+                        @endforeach
+                    @endif
+
+                    @if ($errors->create->any())
+                        @foreach ($errors->create->all() as $key => $error)
+                            <div>{{ $key }} {{ $error }}</div>
+                        @endforeach
+                    @endif
+
+
+                </div>
                 <h4 class="mb-3">Address item</h4>
                 <form action="{{ route('contacts.store') }}" method="post">
                     @csrf
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="" value=""
-                                required="">
+                            <input type="text" class="form-control" name="name" id="name" placeholder=""
+                                value="" required="">
+
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+
+                            @error('create.first.name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="col-sm-6">
                             <label for="second_name" class="form-label">Second name</label>
-                            <input type="text" class="form-control" name="second_name" id="second_name" placeholder="" value=""
-                                required="">
+                            <input type="text" class="form-control" name="second_name" id="second_name"
+                                placeholder="" value="" required="">
                         </div>
 
                         <div class="col-sm-12">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="" value=""
-                                required="">
+                            <input type="text" class="form-control" name="address" id="address" placeholder=""
+                                value="" required="">
                         </div>
 
                         <div class="col-sm-5">
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="" value=""
-                                required="">
-
+                            <input type="text" class="form-control" name="email" id="email" placeholder=""
+                                value="" required="">
                         </div>
 
                         <div class="col-sm-5">
                             <label for="phonenumber" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="phonenumber" placeholder="" value=""
-                                required="">
+                            <input type="text" class="form-control" name="phonenumber" id="phonenumber"
+                                placeholder="" value="" required="">
 
                         </div>
 
                         <div class="col-sm-2">
                             <label for="years" class="form-label">Years</label>
-                            <input type="number" class="form-control" id="years" placeholder="" value=""
-                                required="">
+                            <input type="number" class="form-control" name="years" id="years" placeholder=""
+                                value="" required="">
 
                         </div>
 

@@ -34,8 +34,6 @@
                 <div>
 
 
-
-
                     {{ $errors->create->first('name') }}
 
                     @php
@@ -81,9 +79,9 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
 
-                            @error('create.first.name')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            @if ($errors->create->has('name'))
+                                <div class="alert alert-danger">{{ $errors->create->first('name') }}</div>
+                            @endif
                         </div>
 
                         <div class="col-sm-6">

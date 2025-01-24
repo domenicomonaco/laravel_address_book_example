@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     <div class="container">
         @hasSection('title')
             <div class="py-5 text-center">
